@@ -1,37 +1,37 @@
 class Solution {
 public:
-    void sortColors(vector<int>& arr) {
-        int cnt1 = 0;
-        int cnt2 = 0;
-        int cnt0 = 0;
+    void sortColors(vector<int>& nums) {
+        int Zero = 0;
+        int One = 0;
+        int Two = 0;
 
-        for(auto em:arr)
+
+        for(auto i:nums)
         {
-            if(em == 1) cnt1++;
-            else if(em == 2) cnt2++;
-            else cnt0++;
+            if(i == 0) Zero++;
+            if(i == 1) One++;
+            if(i == 2) Two++;   
         }
+        int i = 0;
+        while(Zero)
+        {
+            nums[i]= 0;
+            i++;
+            Zero--;
 
-      int i=0;
-            while(cnt0)
-            {
-                cnt0--;
-                arr[i] = 0;
-                i++;
-            }
-            
-            while(cnt1)
-            {
-                cnt1--;
-                arr[i] = 1;
-                i++;
-            }
-            while(cnt2)
-            {
-                cnt2--;
-                arr[i] = 2;
-                i++;
-            }
-
+        }
+        while(One)
+        {
+            nums[i] = 1;
+            i++;
+            One--;
+        }
+        while(Two)
+        {
+            nums[i] = 2;
+            i++;
+            Two--;
+        }
+        
     }
 };
